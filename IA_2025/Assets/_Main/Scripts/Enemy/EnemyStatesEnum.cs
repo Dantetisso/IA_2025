@@ -4,5 +4,6 @@ public enum EnemyStatesEnum
     Patrol,
     Chase,
     Attack,
-    Shoot
+    Shoot,
+    Flee
 }
