@@ -7,4 +7,5 @@ public interface IAttack
 {
     void Attack();
     Action OnAttack { get; set; }
+    float GetAttackRange { get; }
 }

@@ -11,6 +11,8 @@ public class PlayerModel : MonoBehaviour, IMove, IAttack
 
     public Vector3 Position => transform.position;
 
+    public float GetAttackRange => throw new NotImplementedException();
+
     protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody>();

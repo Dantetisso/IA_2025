@@ -131,8 +131,11 @@ GameObject:
   - component: {fileID: 4389809595373553618}
   - component: {fileID: 417137875726841212}
   - component: {fileID: 7405186577000613688}
-  - component: {fileID: 6042336202493709073}
-  - component: {fileID: 8185063274535814051}
+  - component: {fileID: 1945086425075250769}
+  - component: {fileID: 9029794966500486067}
+  - component: {fileID: 8387758395336496370}
+  - component: {fileID: 97347727204096077}
+  - component: {fileID: 1807332514906977247}
   m_Layer: 0
   m_Name: NPC2
   m_TagString: Untagged
@@ -205,9 +208,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 68
   m_CollisionDetection: 0
---- !u!114 &6042336202493709073
+--- !u!114 &1945086425075250769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,10 +219,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8216391468322340675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93adbcdb14a15f84abbf47ea81067e1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c8918b97fb2a954d881e89763e6de42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8185063274535814051
+  player: {fileID: 0}
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentWaypointIndex: 0
+  moveSpeed: 2
+  waypointThreshold: 1
+--- !u!114 &9029794966500486067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,9 +239,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 8216391468322340675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e70c781b2b4c9dc47aec2c8645e43d53, type: 3}
+  m_Script: {fileID: 11500000, guid: ac1766bafe1c4134fa727dde4acf2fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 5
+  angle: 45
+  obsMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &8387758395336496370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216391468322340675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47331b0c09b30e541b74228b11fca91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxObs: 2
+  radius: 5
+  angle: 45
+  personalArea: 2
+  obsMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &97347727204096077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216391468322340675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f3d8becf32d234cb77205ef5804e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1807332514906977247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216391468322340675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397524d01e92a2b43920b6cdd54b70ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 2
 --- !u!1 &8776238324903490958
 GameObject:
   m_ObjectHideFlags: 0
