@@ -4,21 +4,39 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-        private IMove _move;
-        private ILook _look;
+        private FSM<StateEnum> _fsm;
         private void Awake()
         {
-                _move = GetComponent<IMove>();
-                _look = GetComponent<ILook>();
+               InitializeFSM();
+        }
+        private void InitializeFSM()
+        {
+                _fsm = new FSM<StateEnum>();
+                var move = GetComponent<IMove>();
+                var look = GetComponent<ILook>();
+                var attack = GetComponent<IAttack>();
+
+                var stateList = new List<PSBase<StateEnum>>();
+
+                var idle = new PSIdle<StateEnum>(StateEnum.Walk);
+                var walk = new PSWalk<StateEnum>(StateEnum.Idle);
+                
+                idle.AddTransition(StateEnum.Walk, walk);
+                walk.AddTransition(StateEnum.Idle, idle);
+                
+                stateList.Add(idle);
+                stateList.Add(walk);
+                
+                for (int i = 0; i < stateList.Count; i++)
+                {
+                        stateList[i].Initialize(move, look, attack);
+                }
+
+                _fsm.SetInit(idle);
         }
 
         private void Update()
         {
-                var dir = new Vector3(InputManager.GetMove().x, 0, InputManager.GetMove().y);
-                _move.Move(dir);
-                if (dir != Vector3.zero)
-                {
-                        _look.LookDir(dir);
-                }
+                _fsm.OnExecute();
         }
 }
