@@ -1,19 +1,25 @@
 using System;
 using UnityEngine;
 
-public class PlayerModel : MonoBehaviour, IMove
+public class PlayerModel : MonoBehaviour, IMove, IAttack
 {
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed;
     private Rigidbody _rb;
-    
+    private Action _onAttack = delegate { };
+
+    public Action OnAttack { get => _onAttack; set => _onAttack = value; }
+
     public Vector3 Position => transform.position;
 
-    protected virtual void Awake()
+    private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
     }
-    
-    public virtual void Move(Vector3 dir)
+    public virtual void Attack()
+    {
+        _onAttack();
+    }
+    public void Move(Vector3 dir)
     {
         dir *= speed;
         dir.y = _rb.linearVelocity.y;

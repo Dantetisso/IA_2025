@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 609063998641385084}
   - component: {fileID: 6598447073119493833}
   - component: {fileID: 3514512397335485005}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7618120486726689182}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NPCModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,9 @@ GameObject:
   - component: {fileID: 7405186577000613688}
   - component: {fileID: 6042336202493709073}
   - component: {fileID: 8185063274535814051}
-  m_Layer: 0
+  - component: {fileID: 4322028987774989746}
+  - component: {fileID: 2430120668340349299}
+  m_Layer: 7
   m_Name: NPC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,6 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93adbcdb14a15f84abbf47ea81067e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  zone: {fileID: 0}
 --- !u!114 &8185063274535814051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +235,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70c781b2b4c9dc47aec2c8645e43d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  attackRange: 1.5
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &4322028987774989746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216391468322340675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983929975f9b8c84b896cf339b165c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2430120668340349299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216391468322340675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1766bafe1c4134fa727dde4acf2fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  angle: 45
+  obsMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &8776238324903490958
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +280,7 @@ GameObject:
   - component: {fileID: 3284193917557222474}
   - component: {fileID: 1703528071226410110}
   - component: {fileID: 9015306188875477923}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

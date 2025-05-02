@@ -7,7 +7,8 @@ public class NPCSChase<T> : NPCSBase<T>
     {
         _target = target;
     }
-    public override void Execute()
+    
+   public override void Execute()
     {
         base.Execute();
         var dir = _target.transform.position - _move.Position;

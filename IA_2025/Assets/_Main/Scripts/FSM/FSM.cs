@@ -5,6 +5,7 @@ using UnityEngine;
 public class FSM<T>
 {
     IState<T> _currState;
+    public IState<T> CurrentState => _currState;
     public FSM() { }
     public FSM(IState<T> curr)
     {

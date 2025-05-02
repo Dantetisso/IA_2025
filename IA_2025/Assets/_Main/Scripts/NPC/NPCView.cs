@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class PlayerView : MonoBehaviour, ILook
+public class NPCView : MonoBehaviour, ILook
 {
     [SerializeField] private float speedRot = 10f;
     [SerializeField] private Animator anim;
@@ -10,7 +9,7 @@ public class PlayerView : MonoBehaviour, ILook
     {
         transform.forward = Vector3.Lerp(transform.forward, dir, Time.deltaTime * speedRot);
     }
-
+    
     private void Update()
     {
         OnMoveAnim();

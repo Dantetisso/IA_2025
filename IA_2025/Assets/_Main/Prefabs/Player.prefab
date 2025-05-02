@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331740128225173739}
   - component: {fileID: 8237129490952469953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 1776550632962266144}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a718eb1bc2073dc4db2157cba2297922, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7396cea709f10254f84bf136c39e8484, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 6116228167330829785}
   - component: {fileID: 3737784986468279283}
   - component: {fileID: 4372995993766425494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedRot: 100
-  _anim: {fileID: 0}
-  _rb: {fileID: 0}
+  _anim: {fileID: 8237129490952469953}
+  _rb: {fileID: 6272789353854873414}
 --- !u!1 &2262513989510135972
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4394760356242277838}
   - component: {fileID: 6737488514704734895}
   - component: {fileID: 3102647030087550355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 853033587835662323}
   - component: {fileID: 3127285687747311433}
   - component: {fileID: 3355940699509478431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
