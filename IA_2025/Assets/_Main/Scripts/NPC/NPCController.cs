@@ -23,6 +23,7 @@ public class NPCController : MonoBehaviour
     void Update()
     {
         _fsm.OnExecute();
+        print(_fsm.CurrentState);
         _root.Execute();
     }
     private void FixedUpdate()

@@ -96,6 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7618120486726689182}
+  - component: {fileID: 6802931098532142117}
   m_Layer: 7
   m_Name: NPCModel
   m_TagString: Untagged
@@ -120,6 +121,28 @@ Transform:
   - {fileID: 609063998641385084}
   m_Father: {fileID: 4389809595373553618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6802931098532142117
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043184676663197725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4857d9c38eb26924f8a1fa32318a48d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8216391468322340675
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +230,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &6042336202493709073
 MonoBehaviour:
@@ -222,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  zone: {fileID: 0}
+  distanceCheck: 0.1
 --- !u!114 &8185063274535814051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +263,11 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
+  wayPointsList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &4322028987774989746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +280,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983929975f9b8c84b896cf339b165c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedRot: 100
+  anim: {fileID: 6802931098532142117}
+  rb: {fileID: 7405186577000613688}
 --- !u!114 &2430120668340349299
 MonoBehaviour:
   m_ObjectHideFlags: 0

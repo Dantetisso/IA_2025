@@ -9,7 +9,7 @@ public class NPCModel : PlayerModel
     
     private int _modifier = 1;
     
-    public int WaypointIndex { get; private set; } = -1;
+    public int WaypointIndex { get; private set; } = 0;
 
     public float AttackRange => attackRange;
     public override void Attack()
