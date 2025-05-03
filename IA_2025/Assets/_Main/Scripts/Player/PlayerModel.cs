@@ -11,7 +11,7 @@ public class PlayerModel : MonoBehaviour, IMove, IAttack
 
     public Vector3 Position => transform.position;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody>();
     }
@@ -19,7 +19,7 @@ public class PlayerModel : MonoBehaviour, IMove, IAttack
     {
         _onAttack();
     }
-    public void Move(Vector3 dir)
+    public virtual void Move(Vector3 dir)
     {
         dir *= speed;
         dir.y = _rb.linearVelocity.y;

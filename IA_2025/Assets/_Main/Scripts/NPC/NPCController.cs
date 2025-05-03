@@ -15,22 +15,21 @@ public class NPCController : MonoBehaviour
         _model = GetComponent<NPCModel>();
         _los = GetComponent<LineOfSightMono>();
     }
-    void Start()
+    private void Start()
     {
         InitializedFSM();
         InitializedTree();
     }
-    void Update()
+    private void Update()
     {
         _fsm.OnExecute();
-        print(_fsm.CurrentState);
         _root.Execute();
     }
     private void FixedUpdate()
     {
         _fsm.OnFixExecute();
     }
-    void InitializedFSM()
+    private void InitializedFSM()
     {
         _fsm = new FSM<StateEnum>();
         var look = GetComponent<ILook>();
@@ -70,7 +69,7 @@ public class NPCController : MonoBehaviour
         _fsm.SetInit(idle);
     }
 
-    void InitializedTree()
+    private void InitializedTree()
     {
         var idle = new ActionNode(() => _fsm.Transition(StateEnum.Idle));
         var attack = new ActionNode(() => _fsm.Transition(StateEnum.Spin));

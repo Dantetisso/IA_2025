@@ -8,9 +8,18 @@ public class NPCModel : PlayerModel
     [SerializeField] private List<Transform> wayPointsList;
     
     private int _modifier = 1;
+    private ObstacleAvoidance _obs;
+    private ILook _look;
     
     public int WaypointIndex { get; private set; } = 0;
 
+    protected override void Awake()
+    {
+        _obs = GetComponent<ObstacleAvoidance>();
+        _look = GetComponent<ILook>();
+        base.Awake();
+    }
+    
     public float AttackRange => attackRange;
     public override void Attack()
     {
@@ -44,5 +53,12 @@ public class NPCModel : PlayerModel
     public Transform GetWaypoint()
     {
         return wayPointsList[WaypointIndex];
+    }
+
+    public override void Move(Vector3 dir)
+    {
+        var obsDir = _obs.GetDir(dir);
+        _look.LookDir(obsDir);
+        base.Move(obsDir);
     }
 }
