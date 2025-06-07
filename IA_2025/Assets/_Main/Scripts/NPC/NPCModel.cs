@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPCModel : PlayerModel
@@ -6,6 +7,7 @@ public class NPCModel : PlayerModel
     [SerializeField] private float attackRange;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private List<Transform> wayPointsList;
+    public bool _isFinishPath;
     
     private int _modifier = 1;
     private ObstacleAvoidance _obs;
